@@ -14,6 +14,11 @@ namespace WS.Auth.ApplicationService.Startup
 {
     public static class AuthStartup
     {
+        /// <summary>
+        /// extension method to configure the auth database
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="assemblyName"></param>
         public static void ConfigureAuth(this WebApplicationBuilder builder, string? assemblyName)
         {
             builder.Services.AddDbContext<AuthDbContext>(

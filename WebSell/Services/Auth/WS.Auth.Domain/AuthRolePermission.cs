@@ -9,19 +9,15 @@ using WS.Shared.Constant.Database;
 
 namespace WS.Auth.Domain
 {
-    [Table(nameof(AuthUser), Schema = DbSchema.Auth)]
-    public class AuthUser
+    [Table(nameof(AuthRolePermission), Schema = DbSchema.Auth)]
+    public class AuthRolePermission
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int RoleId { get; set; }
 
-        [MaxLength(50)]
-        public string UserName { get; set; }
-
-        [MaxLength(256)]
-        public string Password { get; set; }
-        public int? CustomerId { get; set; }
-
+        [MaxLength(128)]
+        public string PermissionKey { get; set; }
     }
 }
