@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WS.Product.Domain;
 using WS.Product.Infrastructures;
 
 namespace WS.Product.ApplicationService.Common
