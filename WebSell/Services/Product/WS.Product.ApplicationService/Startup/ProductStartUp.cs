@@ -14,6 +14,11 @@ namespace WS.Product.ApplicationService.Startup
 {
     public static class ProductStartup
     {
+        /// <summary>
+        /// extension method to configure the product database
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="assemblyName"></param>
         public static void ConfigureProduct(this WebApplicationBuilder builder, string? assemblyName)
         {
             builder.Services.AddDbContext<ProductDbContext>(

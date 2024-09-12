@@ -19,5 +19,6 @@ namespace WS.Product.Domain
         [MaxLength(128)]
         public string Name { get; set; }
         public int Quantity { get; set; }
+        public int CreatedBy { get; set; }
     }
 }

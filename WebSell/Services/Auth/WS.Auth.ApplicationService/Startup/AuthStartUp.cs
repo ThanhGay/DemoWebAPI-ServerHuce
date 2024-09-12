@@ -7,7 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WS.Auth.ApplicationService.UserModule.Abstracts;
+using WS.Auth.ApplicationService.UserModule.Implements;
 using WS.Auth.Infrastructures;
+using WS.Shared.ApplicationService.User;
 using WS.Shared.Constant.Database;
 
 namespace WS.Auth.ApplicationService.Startup
@@ -39,7 +42,8 @@ namespace WS.Auth.ApplicationService.Startup
                 ServiceLifetime.Scoped
             );
 
-            //builder.Services.AddScoped<>();
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IUserInforService, UserInforService>();
         }
     }
 }

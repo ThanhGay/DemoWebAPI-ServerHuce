@@ -19,8 +19,4 @@
 		<ProjectReference Include="..\Services\Product\WS.Product.Dtos\WS.Product.Dtos.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Folder Include="Controllers\" />
-	</ItemGroup>
-
 </Project>
