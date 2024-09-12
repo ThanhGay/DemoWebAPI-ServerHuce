@@ -11,7 +11,7 @@ using WS.Product.Infrastructures;
 namespace WebSell.WebAPI.Migrations.ProductDb
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20240912003607_Init")]
+    [Migration("20240912014118_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -50,10 +50,19 @@ namespace WebSell.WebAPI.Migrations.ProductDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");

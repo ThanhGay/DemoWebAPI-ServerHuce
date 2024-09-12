@@ -7,7 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WS.Product.ApplicationService.ProductManagerModule.Abstracts;
+using WS.Product.ApplicationService.ProductManagerModule.Implements;
 using WS.Product.Infrastructures;
+using WS.Shared.ApplicationService.Product;
 using WS.Shared.Constant.Database;
 
 namespace WS.Product.ApplicationService.Startup
@@ -39,7 +42,8 @@ namespace WS.Product.ApplicationService.Startup
                 ServiceLifetime.Scoped
             );
 
-            //builder.Services.AddScoped<>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IProductInforService, ProductInforService>();
         }
     }
 }
