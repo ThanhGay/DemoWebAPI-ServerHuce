@@ -66,6 +66,7 @@ namespace WS.Product.ApplicationService.ProductManagerModule.Implements
             {
                 var returnProduct = new ProductDto()
                 {
+                    Id = existProduct.Id,
                     Name = existProduct.Name,
                     Price = existProduct.Price,
                     Quantity = existProduct.Quantity,
@@ -129,7 +130,7 @@ namespace WS.Product.ApplicationService.ProductManagerModule.Implements
             }
             else
             {
-                throw new Exception($"Đã tòn tại sản phẩm có tên \"{input.Name}\"")
+                throw new Exception($"Đã tòn tại sản phẩm có tên \"{input.Name}\"");
             }
         }
     }
