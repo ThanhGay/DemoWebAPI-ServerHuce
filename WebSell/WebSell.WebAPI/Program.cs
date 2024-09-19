@@ -1,5 +1,6 @@
 
 using WS.Auth.ApplicationService.Startup;
+using WS.Order.ApplicationService.Startup;
 using WS.Product.ApplicationService.Startup;
 
 namespace WebSell.WebAPI
@@ -18,6 +19,7 @@ namespace WebSell.WebAPI
             builder.Services.AddSwaggerGen();
             builder.ConfigureAuth(typeof(Program).Namespace);
             builder.ConfigureProduct(typeof(Program).Namespace);
+            builder.ConfigureOrder(typeof(Program).Namespace);
 
             var app = builder.Build();
 

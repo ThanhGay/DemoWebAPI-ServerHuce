@@ -1,15 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Shared\WS.Shared.Constant\WS.Shared.Constant.csproj" />
-    <ProjectReference Include="..\WS.Order.Dtos\WS.Order.Dtos.csproj" />
-    <ProjectReference Include="..\WS.Order.Infrastructures\WS.Order.Infrastructures.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Shared\WS.Shared.ApplicationService\WS.Shared.ApplicationService.csproj" />
+		<ProjectReference Include="..\..\Shared\WS.Shared.Constant\WS.Shared.Constant.csproj" />
+		<ProjectReference Include="..\WS.Order.Dtos\WS.Order.Dtos.csproj" />
+		<ProjectReference Include="..\WS.Order.Infrastructures\WS.Order.Infrastructures.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="OrderManagerModule\" />
+	</ItemGroup>
 
 </Project>

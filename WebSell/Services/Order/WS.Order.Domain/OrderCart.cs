@@ -7,16 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using WS.Shared.Constant.Database;
 
-namespace WS.Product.Domain
+namespace WS.Order.Domain
 {
-    [Table(nameof(ProdCategory), Schema = DbSchema.Product)]
-    public class ProdCategory
+    [Table(nameof(OrderCart), Schema = DbSchema.Order)]
+    public class OrderCart
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
-        [MaxLength(50)]
-        public required string Name { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
     }
 }
