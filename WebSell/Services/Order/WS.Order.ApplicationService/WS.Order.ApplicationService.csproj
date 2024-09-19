@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\WS.Shared.Constant\WS.Shared.Constant.csproj" />
+    <ProjectReference Include="..\WS.Order.Dtos\WS.Order.Dtos.csproj" />
+    <ProjectReference Include="..\WS.Order.Infrastructures\WS.Order.Infrastructures.csproj" />
+  </ItemGroup>
+
+</Project>
