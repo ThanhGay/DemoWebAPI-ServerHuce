@@ -8,13 +8,12 @@ using WS.Shared.Constant.Database;
 
 namespace WS.Order.Domain
 {
-    [Table(nameof(OrderDetailPurchase), Schema = DbSchema.Order)]
-    public class OrderDetailPurchase
+    [Table(nameof(OrdOrder), Schema = DbSchema.Order)]
+    public class OrdOrder
     {
         public int Id { get; set; }
-        public int PurchaseId { get; set; }
-        public int ProductId { get; set; }
-        public int Quantity { get; set; }
-        public int UnitPrice { get; set; }
+        public int UserId { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public int Status { get; set; }
     }
 }

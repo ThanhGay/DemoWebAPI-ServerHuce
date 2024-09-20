@@ -15,5 +15,10 @@ namespace WS.Auth.ApplicationService.UserModule.Implements
         public UserInforService(ILogger<UserInforService> logger, AuthDbContext dbContext) : base(logger, dbContext)
         {
         }
+
+        public bool HasUser(int id)
+        {
+            return _dbContext.Users.Any(acc => acc.Id == id);
+        }
     }
 }

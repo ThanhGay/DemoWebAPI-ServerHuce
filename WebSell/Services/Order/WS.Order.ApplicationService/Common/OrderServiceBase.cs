@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WS.Order.Domain;
+using WS.Order.Dtos.CartManagerModule;
 using WS.Order.Infrastructures;
 
 namespace WS.Order.ApplicationService.Common

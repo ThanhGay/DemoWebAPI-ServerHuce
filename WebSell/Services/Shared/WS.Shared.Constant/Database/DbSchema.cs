@@ -12,7 +12,7 @@ namespace WS.Shared.Constant.Database
         public const string Default = "dbo";
         public const string Auth = "auth";
         public const string Product = "prod";
-        public const string Order = "order";
+        public const string Order = "ord";
         public const string Notification = "noti";
     }
 }

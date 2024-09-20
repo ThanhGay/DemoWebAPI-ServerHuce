@@ -8,5 +8,6 @@ namespace WS.Shared.ApplicationService.User
 {
     public interface IUserInforService
     {
+        public bool HasUser(int id);
     }
 }

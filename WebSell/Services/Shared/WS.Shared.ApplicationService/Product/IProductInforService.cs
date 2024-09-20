@@ -8,5 +8,7 @@ namespace WS.Shared.ApplicationService.Product
 {
     public interface IProductInforService
     {
+        //public ProductDto GetProduct(int id);
+        public bool HasProduct (int id);
     }
 }

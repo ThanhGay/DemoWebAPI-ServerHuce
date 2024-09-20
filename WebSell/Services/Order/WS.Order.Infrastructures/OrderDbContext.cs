@@ -10,9 +10,9 @@ namespace WS.Order.Infrastructures
 {
     public class OrderDbContext : DbContext
     {
-        public DbSet<OrderCart> Carts { get; set; }
-        public DbSet<OrderPurchase> Purchases { get; set; }
-        public DbSet<OrderDetailPurchase> Details { get; set; }
+        public DbSet<OrdCart> Carts { get; set; }
+        public DbSet<OrdOrder> Orders { get; set; }
+        public DbSet<OrdOrderDetail> OrderDetails { get; set; }
 
         public OrderDbContext(DbContextOptions options) : base(options)
         {
@@ -20,7 +20,7 @@ namespace WS.Order.Infrastructures
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<OrderDetailPurchase>().HasOne<OrderPurchase>().WithMany().HasForeignKey(d => d.PurchaseId).OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<OrdOrderDetail>().HasOne<OrdOrder>().WithMany().HasForeignKey(d => d.OrderId).OnDelete(DeleteBehavior.Restrict);
             base.OnModelCreating(modelBuilder);
         }
     }

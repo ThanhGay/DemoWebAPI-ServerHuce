@@ -87,6 +87,7 @@ namespace WS.Product.ApplicationService.ProductManagerModule.Implements
 
             var productQuery = _dbContext.Products.Select(s => new ProductDto
             {
+                Id = s.Id,
                 Name = s.Name,
                 Price = s.Price,
                 Quantity = s.Quantity,

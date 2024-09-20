@@ -9,13 +9,14 @@ using WS.Shared.Constant.Database;
 
 namespace WS.Order.Domain
 {
-    [Table(nameof(OrderCart), Schema = DbSchema.Order)]
-    public class OrderCart
+    [Table(nameof(OrdCart), Schema = DbSchema.Order)]
+    public class OrdCart
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
+        public int UserId { get; set; }
     }
 }
