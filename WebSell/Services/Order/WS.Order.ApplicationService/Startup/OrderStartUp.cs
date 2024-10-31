@@ -8,6 +8,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WS.Order.ApplicationService.CartManagerModule.Abstracts;
+using WS.Order.ApplicationService.CartManagerModule.Implements;
+using WS.Order.ApplicationService.OrderManagerModule.Abstracts;
+using WS.Order.ApplicationService.OrderManagerModule.Implements;
 using WS.Order.Infrastructures;
 using WS.Shared.Constant.Database;
 
@@ -39,7 +43,8 @@ namespace WS.Order.ApplicationService.Startup
                 ServiceLifetime.Scoped
             );
 
-            //builder.Services.AddScoped<>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<ICartService, CartService>();
         }
     }
 }

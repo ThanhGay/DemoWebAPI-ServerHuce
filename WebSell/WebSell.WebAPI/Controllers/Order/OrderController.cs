@@ -20,6 +20,19 @@ namespace WebSell.WebAPI.Controllers.Order
             _cartService = cartService;
         }
 
+        [HttpGet("/cart/get/{cardId}")]
+        public IActionResult GetCart(int cardId)
+        {
+            try
+            {
+                return Ok(_cartService.GetById(cardId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("/cart/add")]
         public IActionResult CreateCart(CreateCartDto input)
         {
@@ -34,12 +47,12 @@ namespace WebSell.WebAPI.Controllers.Order
             }
         }
 
-        [HttpPut("/cart/increase/{cartId}")]
-        public IActionResult IncreaseQuantity(int cartId)
+        [HttpPut("/cart/increase/{id}")]
+        public IActionResult IncreaseQuantity(int id)
         {
             try
             {
-                _cartService.IncreaseQuantity(cartId);
+                _cartService.IncreaseQuantity(id);
                 return Ok();
             }
             catch (Exception ex)
@@ -48,12 +61,12 @@ namespace WebSell.WebAPI.Controllers.Order
             }
         }
 
-        [HttpPut("/cart/decrease/{cartId}")]
-        public IActionResult DecreaseQuantity(int cartId)
+        [HttpPut("/cart/decrease/{id}")]
+        public IActionResult DecreaseQuantity(int id)
         {
             try
             {
-                _cartService.DecreaseQuantity(cartId);
+                _cartService.DecreaseQuantity(id);
                 return Ok();
             }
             catch (Exception ex)
@@ -63,12 +76,25 @@ namespace WebSell.WebAPI.Controllers.Order
         }
 
         [HttpDelete("/cart/delete/{id}")]
-        public IActionResult DeleteCart(int cartId)
+        public IActionResult DeleteCart(int id)
         {
             try
             {
-                _cartService.RemoveFromCart(cartId);
+                _cartService.RemoveFromCart(id);
                 return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("/order/detail/{id}")]
+        public IActionResult GetOrder(int id)
+        {
+            try
+            {
+                return Ok(_orderService.GetDetail(id));
             }
             catch (Exception ex)
             {
@@ -82,7 +108,7 @@ namespace WebSell.WebAPI.Controllers.Order
             try
             {
                 _orderService.CreateOrder(input);
-                return Ok("Sowe thing wents wrong.");
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -101,7 +127,22 @@ namespace WebSell.WebAPI.Controllers.Order
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-            };
+            }
+            ;
+        }
+
+        [HttpDelete("/order/delete/{id}")]
+        public IActionResult DeleteOrder(int id)
+        {
+            try
+            {
+                _orderService.DeleteOrder(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

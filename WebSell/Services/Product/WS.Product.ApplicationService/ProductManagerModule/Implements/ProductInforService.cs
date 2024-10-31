@@ -21,28 +21,28 @@ namespace WS.Product.ApplicationService.ProductManagerModule.Implements
             _userInforService = userInforService;
         }
 
-        //public ProductDto GetProduct(int id)
-        //{
-        //    var existProduct = _dbContext.Products.FirstOrDefault(prod => prod.Id == id);
+        public ProductDto GetProduct(int id)
+        {
+            var existProduct = _dbContext.Products.FirstOrDefault(prod => prod.Id == id);
 
-        //    if (existProduct != null)
-        //    {
-        //        var returnProduct = new ProductDto()
-        //        {
-        //            Id = existProduct.Id,
-        //            Name = existProduct.Name,
-        //            Price = existProduct.Price,
-        //            Quantity = existProduct.Quantity,
-        //            Description = existProduct.Description,
-        //        };
+            if (existProduct != null)
+            {
+                var returnProduct = new ProductDto()
+                {
+                    Id = existProduct.Id,
+                    Name = existProduct.Name,
+                    Price = existProduct.Price,
+                    Quantity = existProduct.Quantity,
+                    Description = existProduct.Description,
+                };
 
-        //        return returnProduct;
-        //    }
-        //    else
-        //    {
-        //        throw new Exception($"Không tìm thấy sản phẩm có Id: {id}.");
-        //    }
-        //}
+                return returnProduct;
+            }
+            else
+            {
+                throw new Exception($"Không tìm thấy sản phẩm có Id: {id}.");
+            }
+        }
 
         public bool HasProduct(int id)
         {
